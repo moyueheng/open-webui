@@ -15,7 +15,7 @@ remove:
 start:
 	$(DOCKER_COMPOSE) start
 startAndBuild: 
-	$(DOCKER_COMPOSE) up -d --build
+	DOCKER_BUILDKIT=1 COMPOSE_DOCKER_CLI_BUILD=1 $(DOCKER_COMPOSE) up -d --build
 
 stop:
 	$(DOCKER_COMPOSE) stop
